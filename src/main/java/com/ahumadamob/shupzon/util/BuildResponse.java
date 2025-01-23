@@ -67,6 +67,12 @@ public class BuildResponse {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
 	}
 	
+	public static<T> ResponseEntity<ResponseDTO<T>> badRequest(String field, String message) {
+		ResponseDTO<T> res = new ResponseDTO<>(HttpStatus.BAD_REQUEST.value());
+		res.addError(field, message);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+	}	
+	
 	public static<T> ResponseEntity<ResponseDTO<T>> delete(String entity, Long id) {
 		String message = "Se ha eliminado el registro de " + entity + " con id = " + id.toString();
 		ResponseDTO<T> res = new ResponseDTO<>(HttpStatus.OK.value());
