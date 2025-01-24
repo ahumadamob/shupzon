@@ -22,7 +22,7 @@ public class CategoriaServiceImplJpa implements ICategoriaService {
 
 	@Override
 	public Categoria getById(Long id) {
-		return r.findById(id).orElse(null);
+		return (id==null)?null:r.findById(id).orElse(null);
 	}
 
 	@Override
