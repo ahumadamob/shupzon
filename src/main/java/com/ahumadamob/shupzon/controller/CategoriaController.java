@@ -59,7 +59,7 @@ public class CategoriaController {
 			categoriaService.deleteById(id);
 			return BuildResponse.success("Categoría eliminada correctamente.");
 		}else {
-			return BuildResponse.badRequest("No existe el alumno con id {0}.", id);
+			return BuildResponse.badRequest("No existe la categoría con id {0}.", id);
 		}				
 	}
 	
